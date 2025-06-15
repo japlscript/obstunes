@@ -1,5 +1,10 @@
 - 0.9.7
 
+  - Moved to JaplScript 3.4.14
+
+
+- 0.9.7
+
   - Moved to JaplScript 3.4.12
 
 
