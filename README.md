@@ -55,3 +55,9 @@ You can find the complete [API here](https://japlscript.github.io/obstunes/com/t
 For information about shipping apps with this library, please see
 the corresponding notes about signing, notarization etc. in the
 [JaplScript documentation](https://github.com/japlscript/japlscript/blob/main/README.md).
+                                                  
+
+## Build Notes
+
+Since GitHub does not support a runner that is old enough to run iTunes, this library
+is not properly tested during CI.

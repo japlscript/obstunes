@@ -46,11 +46,9 @@ jobs:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           GPG_TTY: $(tty)
-        # Manipulate TCC, see https://github.com/actions/virtual-environments/issues/553#issuecomment-648109166
-        # in order to allow AppleScript automation of iTunes.app
         run: |
-          sqlite3 "/Users/runner/Library/Application Support/com.apple.TCC/TCC.db" "insert into access (service, client, client_type, allowed, prompt_count, indirect_object_identifier_type, indirect_object_identifier) values ('kTCCServiceAppleEvents', '/bin/bash', 1, 1, 1, 0, 'com.apple.iTunes')"
           mvn \
+            -DskipTests \
             --no-transfer-progress \
             --batch-mode \
             -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} \

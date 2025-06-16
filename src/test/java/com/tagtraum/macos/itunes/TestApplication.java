@@ -21,6 +21,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class TestApplication {
 
     @Test
+    @EnabledIfSystemProperty(named = "os.version",
+        matches = "10\\.14\\..*",
+        disabledReason = "Test only enabled on macOS 10.14")
     public void testVersion() {
         final Application application = Application.getInstance();
         final String version = application.getVersion();
